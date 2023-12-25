@@ -1,9 +1,14 @@
 from art import logo
 import sys
+import os
 
 list_of_bids = []
 dict_of_users = {}
 print(logo)
+
+def clear():
+    os.system( 'cls' )
+
 
 def secret_bid():
     global list_of_bids
@@ -26,6 +31,7 @@ def secret_bid():
         is_there_anyone = input("\nIf there is anyone willing to bid, press Y, or press X to exit: ").lower()
 
         if is_there_anyone == "y":
+            clear()
             return secret_bid()
         elif is_there_anyone == "x":
             max_bid = max(list_of_bids)
